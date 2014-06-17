@@ -1,0 +1,411 @@
+\hypertarget{AETC__Robot_8c}{
+\section{src/AETC\_\-Robot.c File Reference}
+\label{AETC__Robot_8c}\index{src/AETC\_\-Robot.c@{src/AETC\_\-Robot.c}}
+}
+{\ttfamily \#include $<$avr/io.h$>$}\par
+{\ttfamily \#include $<$avr/interrupt.h$>$}\par
+{\ttfamily \#include $<$util/delay.h$>$}\par
+{\ttfamily \#include $<$avr/signal.h$>$}\par
+{\ttfamily \#include $<$math.h$>$}\par
+{\ttfamily \#include \char`\"{}AETC\_\-lcd.c\char`\"{}}\par
+{\ttfamily \#include $<$avr/delay.h$>$}\par
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{AETC__Robot_8c_a9d4ad5467cb8a39312513dfaaf4d950a}{
+\#define \hyperlink{AETC__Robot_8c_a9d4ad5467cb8a39312513dfaaf4d950a}{FCPU}~11059200ul}
+\label{AETC__Robot_8c_a9d4ad5467cb8a39312513dfaaf4d950a}
+
+\begin{DoxyCompactList}\small\item\em defined here to make sure that program works properly \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{AETC__Robot_8c_a5c2ba800834495bb295891490cb1c760}{port\_\-init} ()
+\item 
+void \hyperlink{AETC__Robot_8c_a578f7cc9b705ce549aa856c927b102e8}{timer5\_\-init} ()
+\item 
+void \hyperlink{AETC__Robot_8c_aeb91982ef0f52d5adeb343ea450e84a0}{velocity} (unsigned char, unsigned char)
+\item 
+\hypertarget{AETC__Robot_8c_a049f338430ccb37404fd4bd4f505a0fa}{
+void {\bfseries motors\_\-delay} ()}
+\label{AETC__Robot_8c_a049f338430ccb37404fd4bd4f505a0fa}
+
+\item 
+void \hyperlink{AETC__Robot_8c_abb302081b7dbd40d0fea4bbe53fd9b7b}{timer1\_\-init} ()
+\item 
+unsigned char \hyperlink{AETC__Robot_8c_a3aedb5aa08d1a59fd4576fc4493e411d}{ADC\_\-Conversion} (unsigned char)
+\item 
+\hypertarget{AETC__Robot_8c_ab16889ae984b9b798989a0d239283cac}{
+{\bfseries ISR} (TIMER1\_\-OVF\_\-vect)}
+\label{AETC__Robot_8c_ab16889ae984b9b798989a0d239283cac}
+
+\item 
+\hypertarget{AETC__Robot_8c_af55f75f83e87baf043c835ef54412b99}{
+void {\bfseries lcd\_\-port\_\-config} (void)}
+\label{AETC__Robot_8c_af55f75f83e87baf043c835ef54412b99}
+
+\item 
+\hypertarget{AETC__Robot_8c_a27f01c5d49b89503a6d1380f151b19af}{
+void {\bfseries adc\_\-pin\_\-config} (void)}
+\label{AETC__Robot_8c_a27f01c5d49b89503a6d1380f151b19af}
+
+\item 
+\hypertarget{AETC__Robot_8c_a17cf811a885634d71a23e8d4a20457f0}{
+void {\bfseries motion\_\-pin\_\-config} (void)}
+\label{AETC__Robot_8c_a17cf811a885634d71a23e8d4a20457f0}
+
+\item 
+void \hyperlink{AETC__Robot_8c_a1e942fcd91f79d49e4ddb8d7e9d3ef95}{adc\_\-init} ()
+\item 
+void \hyperlink{AETC__Robot_8c_af1987bcf7f4a9f3bfbb930ace592d829}{print\_\-sensor} (char row, char coloumn, unsigned char channel)
+\item 
+void \hyperlink{AETC__Robot_8c_a10cb8a1450bfb05cd9c72ad09ce7f2fe}{motion\_\-set} (unsigned char Direction)
+\item 
+\hypertarget{AETC__Robot_8c_a0b5f946b51550fe862b59f91ae5fe9f9}{
+void {\bfseries forward} (void)}
+\label{AETC__Robot_8c_a0b5f946b51550fe862b59f91ae5fe9f9}
+
+\item 
+\hypertarget{AETC__Robot_8c_aacf6bf8e121fea8b0a92d7197b73fe27}{
+void {\bfseries stop} (void)}
+\label{AETC__Robot_8c_aacf6bf8e121fea8b0a92d7197b73fe27}
+
+\item 
+void \hyperlink{AETC__Robot_8c_abbbf5055286d09a73b87f57f71dfd0b9}{uart0\_\-init} (void)
+\item 
+void \hyperlink{AETC__Robot_8c_a2e22d5e270a39ffcf36b38e02cc7b033}{init\_\-devices} (void)
+\item 
+\hyperlink{AETC__Robot_8c_ab5f8e79f6ffa3be348924e573e8dcfd1}{SIGNAL} (SIG\_\-USART0\_\-RECV)
+\item 
+int \hyperlink{AETC__Robot_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char \hyperlink{AETC__Robot_8c_a7478dc1bbf98fafa771a4e2c1a27f70b}{ADC\_\-Value}
+\item 
+\hypertarget{AETC__Robot_8c_adb29d4c758cec08083763cd206cb1c66}{
+unsigned char {\bfseries flag1} = 0}
+\label{AETC__Robot_8c_adb29d4c758cec08083763cd206cb1c66}
+
+\item 
+\hypertarget{AETC__Robot_8c_a56ccd9e3e18a64bfb8fd8d27b5e981f4}{
+unsigned char {\bfseries flag2} = 0}
+\label{AETC__Robot_8c_a56ccd9e3e18a64bfb8fd8d27b5e981f4}
+
+\item 
+\hypertarget{AETC__Robot_8c_a7ceb8bf372a716e22ab056d1b7df49e7}{
+unsigned char \hyperlink{AETC__Robot_8c_a7ceb8bf372a716e22ab056d1b7df49e7}{f} = 0}
+\label{AETC__Robot_8c_a7ceb8bf372a716e22ab056d1b7df49e7}
+
+\begin{DoxyCompactList}\small\item\em stores flag values \item\end{DoxyCompactList}\item 
+\hypertarget{AETC__Robot_8c_a40b3670b4091cb5fd22b40e0a6339864}{
+unsigned char \hyperlink{AETC__Robot_8c_a40b3670b4091cb5fd22b40e0a6339864}{Left\_\-white\_\-line} = 0}
+\label{AETC__Robot_8c_a40b3670b4091cb5fd22b40e0a6339864}
+
+\begin{DoxyCompactList}\small\item\em store left white line sensor value \item\end{DoxyCompactList}\item 
+\hypertarget{AETC__Robot_8c_ac84e16450d12eed142395bfcf7444ee7}{
+unsigned char \hyperlink{AETC__Robot_8c_ac84e16450d12eed142395bfcf7444ee7}{Center\_\-white\_\-line} = 0}
+\label{AETC__Robot_8c_ac84e16450d12eed142395bfcf7444ee7}
+
+\begin{DoxyCompactList}\small\item\em store center white line sensor value \item\end{DoxyCompactList}\item 
+\hypertarget{AETC__Robot_8c_a714d95b2e8eafc387d408dbd07bb267d}{
+unsigned char \hyperlink{AETC__Robot_8c_a714d95b2e8eafc387d408dbd07bb267d}{Right\_\-white\_\-line} = 0}
+\label{AETC__Robot_8c_a714d95b2e8eafc387d408dbd07bb267d}
+
+\begin{DoxyCompactList}\small\item\em store right white line sensor value \item\end{DoxyCompactList}\item 
+\hypertarget{AETC__Robot_8c_a510d73ef73ed67f76e6d6b13c86d093d}{
+unsigned char \hyperlink{AETC__Robot_8c_a510d73ef73ed67f76e6d6b13c86d093d}{Front\_\-Sharp\_\-Sensor} = 0}
+\label{AETC__Robot_8c_a510d73ef73ed67f76e6d6b13c86d093d}
+
+\begin{DoxyCompactList}\small\item\em store front sensor value \item\end{DoxyCompactList}\item 
+\hypertarget{AETC__Robot_8c_a350f871cfbab83d0c434b6c6301e1cf7}{
+unsigned char {\bfseries Front\_\-IR\_\-Sensor} = 0}
+\label{AETC__Robot_8c_a350f871cfbab83d0c434b6c6301e1cf7}
+
+\item 
+\hypertarget{AETC__Robot_8c_aa95b8063611db53a783d9a31352d1e48}{
+unsigned int {\bfseries vehicle\_\-stop} = 0}
+\label{AETC__Robot_8c_aa95b8063611db53a783d9a31352d1e48}
+
+\item 
+\hypertarget{AETC__Robot_8c_a7fd3dad256d2733099d2ca9a13623184}{
+unsigned int \hyperlink{AETC__Robot_8c_a7fd3dad256d2733099d2ca9a13623184}{LID\_\-Transmit} = 0}
+\label{AETC__Robot_8c_a7fd3dad256d2733099d2ca9a13623184}
+
+\begin{DoxyCompactList}\small\item\em store transmitted ID value \item\end{DoxyCompactList}\item 
+\hypertarget{AETC__Robot_8c_a433b1c9921d3b90f7c145c781a43f325}{
+unsigned char \hyperlink{AETC__Robot_8c_a433b1c9921d3b90f7c145c781a43f325}{data}}
+\label{AETC__Robot_8c_a433b1c9921d3b90f7c145c781a43f325}
+
+\begin{DoxyCompactList}\small\item\em store data \item\end{DoxyCompactList}\item 
+\hypertarget{AETC__Robot_8c_a7f7e4724cf57d59513b39c5ecc81adc8}{
+float \hyperlink{AETC__Robot_8c_a7f7e4724cf57d59513b39c5ecc81adc8}{speed}}
+\label{AETC__Robot_8c_a7f7e4724cf57d59513b39c5ecc81adc8}
+
+\begin{DoxyCompactList}\small\item\em store speed \item\end{DoxyCompactList}\item 
+\hypertarget{AETC__Robot_8c_ae9966ab78d2d8a39c3a0ed6032ee92de}{
+unsigned char {\bfseries speed\_\-int}}
+\label{AETC__Robot_8c_ae9966ab78d2d8a39c3a0ed6032ee92de}
+
+\item 
+\hypertarget{AETC__Robot_8c_a60fafdc18420ca5d7ee1d319ed809b0e}{
+unsigned char {\bfseries speed\_\-dec}}
+\label{AETC__Robot_8c_a60fafdc18420ca5d7ee1d319ed809b0e}
+
+\item 
+\hypertarget{AETC__Robot_8c_a59e9390e5e8dc21453eabd03e2ce1a1e}{
+unsigned int {\bfseries RegSpeed} = 150}
+\label{AETC__Robot_8c_a59e9390e5e8dc21453eabd03e2ce1a1e}
+
+\item 
+\hypertarget{AETC__Robot_8c_aac8d89d11bf1bf39e235cfd12e5d5c31}{
+unsigned char {\bfseries StartTheBot} = 0}
+\label{AETC__Robot_8c_aac8d89d11bf1bf39e235cfd12e5d5c31}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Program for speed calculation, white line follower and obstacle detection. \begin{DoxyAuthor}{Author}
+Puskar Kothavade, Ashish Pardhi, Mugdha Nazare, IIT Bombay 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+10/Oct/2010 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.0
+\end{DoxyVersion}
+\hypertarget{AETC__Robot_8c_LICENSE}{}\subsection{LICENSE}\label{AETC__Robot_8c_LICENSE}
+Copyright (c) 2010. ERTS Lab IIT Bombay All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+Neither the name of the copyright holders nor the names of contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+Source code can be used for academic purpose. For commercial use permission form the author needs to be taken. 
+
+\subsection{Function Documentation}
+\hypertarget{AETC__Robot_8c_a3aedb5aa08d1a59fd4576fc4493e411d}{
+\index{AETC\_\-Robot.c@{AETC\_\-Robot.c}!ADC\_\-Conversion@{ADC\_\-Conversion}}
+\index{ADC\_\-Conversion@{ADC\_\-Conversion}!AETC_Robot.c@{AETC\_\-Robot.c}}
+\subsubsection[{ADC\_\-Conversion}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char ADC\_\-Conversion (unsigned char {\em Ch})}}
+\label{AETC__Robot_8c_a3aedb5aa08d1a59fd4576fc4493e411d}
+
+
+$<$ Set start conversion bit
+
+$<$ Wait for conversion to complete
+
+$<$ clear ADIF (ADC Interrupt Flag) by writing 1 to it 
+
+\hypertarget{AETC__Robot_8c_a1e942fcd91f79d49e4ddb8d7e9d3ef95}{
+\index{AETC\_\-Robot.c@{AETC\_\-Robot.c}!adc\_\-init@{adc\_\-init}}
+\index{adc\_\-init@{adc\_\-init}!AETC_Robot.c@{AETC\_\-Robot.c}}
+\subsubsection[{adc\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void adc\_\-init ()}}
+\label{AETC__Robot_8c_a1e942fcd91f79d49e4ddb8d7e9d3ef95}
+
+
+$<$ MUX5 = 0
+
+$<$ Vref=5V external -\/-\/-\/ ADLAR=1 -\/-\/-\/ MUX4:0 = 0000
+
+$<$ ADEN=1 -\/-\/-\/ ADIE=1 -\/-\/-\/ ADPS2:0 = 1 1 0 
+
+\hypertarget{AETC__Robot_8c_a2e22d5e270a39ffcf36b38e02cc7b033}{
+\index{AETC\_\-Robot.c@{AETC\_\-Robot.c}!init\_\-devices@{init\_\-devices}}
+\index{init\_\-devices@{init\_\-devices}!AETC_Robot.c@{AETC\_\-Robot.c}}
+\subsubsection[{init\_\-devices}]{\setlength{\rightskip}{0pt plus 5cm}void init\_\-devices (void)}}
+\label{AETC__Robot_8c_a2e22d5e270a39ffcf36b38e02cc7b033}
+
+
+$<$ Clears the global interrupts
+
+$<$ initialise the ports 
+
+\hypertarget{AETC__Robot_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{
+\index{AETC\_\-Robot.c@{AETC\_\-Robot.c}!main@{main}}
+\index{main@{main}!AETC_Robot.c@{AETC\_\-Robot.c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (void)}}
+\label{AETC__Robot_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}
+Main Function 
+
+$<$ Getting data of Left WL Sensor
+
+$<$ Getting data of Center WL Sensor
+
+$<$ Getting data of Right WL Sensor
+
+$<$ Getting data of Front Sharp sensor
+
+$<$ Getting data of Front IR sensor
+
+$<$ Prints value of White Line Sensor1
+
+$<$ Prints Value of White Line Sensor2
+
+$<$ Prints Value of White Line Sensor3
+
+$<$ vehicle at first black patch
+
+$<$ Timer 1 start witrh no prescaler
+
+$<$ Getting data of Left WL Sensor
+
+$<$ Getting data of Center WL Sensor
+
+$<$ Getting data of Right WL Sensor
+
+$<$ vehicle at second black patch
+
+$<$ Timer 1 stop
+
+$<$ vehicle at third black patch
+
+$<$ Capturing photo in progress
+
+$<$ photograph taken. Vehicle can go ahead now
+
+$<$ Obstacle detection 
+
+\hypertarget{AETC__Robot_8c_a10cb8a1450bfb05cd9c72ad09ce7f2fe}{
+\index{AETC\_\-Robot.c@{AETC\_\-Robot.c}!motion\_\-set@{motion\_\-set}}
+\index{motion\_\-set@{motion\_\-set}!AETC_Robot.c@{AETC\_\-Robot.c}}
+\subsubsection[{motion\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}void motion\_\-set (unsigned char {\em Direction})}}
+\label{AETC__Robot_8c_a10cb8a1450bfb05cd9c72ad09ce7f2fe}
+Function used for setting motor's direction. 
+
+$<$ removing upper nibbel for the protection
+
+$<$ reading the PORTA original status
+
+$<$ making lower direction nibbel to 0
+
+$<$ adding lower nibbel for forward command and restoring the PORTA status
+
+$<$ executing the command 
+
+\hypertarget{AETC__Robot_8c_a5c2ba800834495bb295891490cb1c760}{
+\index{AETC\_\-Robot.c@{AETC\_\-Robot.c}!port\_\-init@{port\_\-init}}
+\index{port\_\-init@{port\_\-init}!AETC_Robot.c@{AETC\_\-Robot.c}}
+\subsubsection[{port\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void port\_\-init ()}}
+\label{AETC__Robot_8c_a5c2ba800834495bb295891490cb1c760}
+Functions prototype \hypertarget{AETC__Robot_8c_af1987bcf7f4a9f3bfbb930ace592d829}{
+\index{AETC\_\-Robot.c@{AETC\_\-Robot.c}!print\_\-sensor@{print\_\-sensor}}
+\index{print\_\-sensor@{print\_\-sensor}!AETC_Robot.c@{AETC\_\-Robot.c}}
+\subsubsection[{print\_\-sensor}]{\setlength{\rightskip}{0pt plus 5cm}void print\_\-sensor (char {\em row}, \/  char {\em coloumn}, \/  unsigned char {\em channel})}}
+\label{AETC__Robot_8c_af1987bcf7f4a9f3bfbb930ace592d829}
+Function To Print Sesor Values At Desired Row And Coloumn Location on LCD \hypertarget{AETC__Robot_8c_ab5f8e79f6ffa3be348924e573e8dcfd1}{
+\index{AETC\_\-Robot.c@{AETC\_\-Robot.c}!SIGNAL@{SIGNAL}}
+\index{SIGNAL@{SIGNAL}!AETC_Robot.c@{AETC\_\-Robot.c}}
+\subsubsection[{SIGNAL}]{\setlength{\rightskip}{0pt plus 5cm}SIGNAL (SIG\_\-USART0\_\-RECV)}}
+\label{AETC__Robot_8c_ab5f8e79f6ffa3be348924e573e8dcfd1}
+Usart receiver ISR 
+
+$<$ making copy of data from UDR0 in data variable
+
+$<$ To Regulate the speed
+
+$<$ To transmit ID to Laptop
+
+$<$ To transmit speed int value
+
+$<$ To transmit speed value after decimal point
+
+$<$ IF third black patch comes then transmit 1 otherwise 0.
+
+$<$ Image capture process over. Vehicle can go ahead now. 
+
+\hypertarget{AETC__Robot_8c_abb302081b7dbd40d0fea4bbe53fd9b7b}{
+\index{AETC\_\-Robot.c@{AETC\_\-Robot.c}!timer1\_\-init@{timer1\_\-init}}
+\index{timer1\_\-init@{timer1\_\-init}!AETC_Robot.c@{AETC\_\-Robot.c}}
+\subsubsection[{timer1\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void timer1\_\-init ()}}
+\label{AETC__Robot_8c_abb302081b7dbd40d0fea4bbe53fd9b7b}
+
+
+$<$ STOP
+
+$<$ Timer register higher 8 bit to zero
+
+$<$ Timer register lower 8 bit to zero
+
+$<$ Output compare register higher 8 bits...not used in this case
+
+$<$ Output compare register lower 8 bits.....not used in this case
+
+$<$ Output compare register higher 8 bits...not used in this case
+
+$<$ Output compare register lower 8 bits.....not used in this case
+
+$<$ Output compare register higher 8 bits...not used in this case
+
+$<$ Output compare register lower 8 bits.....not used in this case
+
+$<$ Using channel A only, but not using output compare mode. WGM: normal mode COM10:1=00
+
+$<$ No FOC
+
+$<$ Timer overflow interrupt enabled
+
+$<$ Setting I flag of status register to one to globally enable all interrupts 
+
+\hypertarget{AETC__Robot_8c_a578f7cc9b705ce549aa856c927b102e8}{
+\index{AETC\_\-Robot.c@{AETC\_\-Robot.c}!timer5\_\-init@{timer5\_\-init}}
+\index{timer5\_\-init@{timer5\_\-init}!AETC_Robot.c@{AETC\_\-Robot.c}}
+\subsubsection[{timer5\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void timer5\_\-init ()}}
+\label{AETC__Robot_8c_a578f7cc9b705ce549aa856c927b102e8}
+
+
+$<$ Stop
+
+$<$ Counter higher 8-\/bit value to which OCR5xH value is compared with
+
+$<$ Counter lower 8-\/bit value to which OCR5xH value is compared with
+
+$<$ Output compare register high value for Left Motor
+
+$<$ Output compare register low value for Left Motor
+
+$<$ Output compare register high value for Right Motor
+
+$<$ Output compare register low value for Right Motor
+
+$<$ Output compare register high value for Motor C1
+
+$<$ Output compare register low value for Motor C1
+
+$<$ \{COM5A1=1, COM5A0=0; COM5B1=1, COM5B0=0; COM5C1=1 COM5C0=0\} For Overriding normal port functionalit to OCRnA outputs. \{WGM51=0, WGM50=1\} Along With WGM52 in TCCR5B for Selecting FAST PWM 8-\/bit Mode
+
+$<$ WGM12=1; CS12=0, CS11=1, CS10=1 (Prescaler=64) 
+
+\hypertarget{AETC__Robot_8c_abbbf5055286d09a73b87f57f71dfd0b9}{
+\index{AETC\_\-Robot.c@{AETC\_\-Robot.c}!uart0\_\-init@{uart0\_\-init}}
+\index{uart0\_\-init@{uart0\_\-init}!AETC_Robot.c@{AETC\_\-Robot.c}}
+\subsubsection[{uart0\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void uart0\_\-init (void)}}
+\label{AETC__Robot_8c_abbbf5055286d09a73b87f57f71dfd0b9}
+Function To Initialize UART0 desired baud rate:9600 actual baud rate:9600 (0.0\%) char size: 8 bit parity: Disabled 
+
+$<$ disable while setting baud rate
+
+$<$ set baud rate lo
+
+$<$ set baud rate hi 
+
+\hypertarget{AETC__Robot_8c_aeb91982ef0f52d5adeb343ea450e84a0}{
+\index{AETC\_\-Robot.c@{AETC\_\-Robot.c}!velocity@{velocity}}
+\index{velocity@{velocity}!AETC_Robot.c@{AETC\_\-Robot.c}}
+\subsubsection[{velocity}]{\setlength{\rightskip}{0pt plus 5cm}void velocity (unsigned char {\em left\_\-motor}, \/  unsigned char {\em right\_\-motor})}}
+\label{AETC__Robot_8c_aeb91982ef0f52d5adeb343ea450e84a0}
+Function for velocity control. 
+
+\subsection{Variable Documentation}
+\hypertarget{AETC__Robot_8c_a7478dc1bbf98fafa771a4e2c1a27f70b}{
+\index{AETC\_\-Robot.c@{AETC\_\-Robot.c}!ADC\_\-Value@{ADC\_\-Value}}
+\index{ADC\_\-Value@{ADC\_\-Value}!AETC_Robot.c@{AETC\_\-Robot.c}}
+\subsubsection[{ADC\_\-Value}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf ADC\_\-Value}}}
+\label{AETC__Robot_8c_a7478dc1bbf98fafa771a4e2c1a27f70b}
+Global Variables 

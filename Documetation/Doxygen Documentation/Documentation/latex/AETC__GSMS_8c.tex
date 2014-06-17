@@ -1,0 +1,97 @@
+\hypertarget{AETC__GSMS_8c}{
+\section{src/AETC\_\-GSMS.c File Reference}
+\label{AETC__GSMS_8c}\index{src/AETC\_\-GSMS.c@{src/AETC\_\-GSMS.c}}
+}
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include $<$malloc.h$>$}\par
+{\ttfamily \#include $<$unistd.h$>$}\par
+{\ttfamily \#include $<$fcntl.h$>$}\par
+{\ttfamily \#include $<$errno.h$>$}\par
+{\ttfamily \#include $<$termios.h$>$}\par
+{\ttfamily \#include $<$sys/time.h$>$}\par
+{\ttfamily \#include $<$sys/types.h$>$}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{AETC__GSMS_8c_aed25fe19369b6d61d6a42f2b211ea760}{port\_\-open} (void)
+\item 
+void \hyperlink{AETC__GSMS_8c_a3617f233b4769b22741431ca316c17f5}{port\_\-config} (int fd)
+\item 
+void \hyperlink{AETC__GSMS_8c_abacedc5f89540058d74370d628c7af47}{del\_\-2s} (void)
+\item 
+void \hyperlink{AETC__GSMS_8c_a3fe91e8a27406711d3535d415c54c064}{write\_\-data} (int fd, char $\ast$c)
+\item 
+void \hyperlink{AETC__GSMS_8c_a8e7b00df41b6caed376b8ffa5d735092}{port\_\-close} (int fd)
+\item 
+int \hyperlink{AETC__GSMS_8c_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Program for serial communication between Owner and TollPlaza through GSM Module. Send Success Message \begin{DoxyAuthor}{Author}
+Puskar Kothavade, Ashish Pardhi, Mugdha Nazare, IIT Bombay 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+10/Oct/2010 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.0
+\end{DoxyVersion}
+\hypertarget{AETC__Robot_8c_LICENSE}{}\subsection{LICENSE}\label{AETC__Robot_8c_LICENSE}
+Copyright (c) 2010. ERTS Lab IIT Bombay All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+Neither the name of the copyright holders nor the names of contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+Source code can be used for academic purpose. For commercial use permission form the author needs to be taken. 
+
+\subsection{Function Documentation}
+\hypertarget{AETC__GSMS_8c_abacedc5f89540058d74370d628c7af47}{
+\index{AETC\_\-GSMS.c@{AETC\_\-GSMS.c}!del\_\-2s@{del\_\-2s}}
+\index{del\_\-2s@{del\_\-2s}!AETC_GSMS.c@{AETC\_\-GSMS.c}}
+\subsubsection[{del\_\-2s}]{\setlength{\rightskip}{0pt plus 5cm}void del\_\-2s (void)}}
+\label{AETC__GSMS_8c_abacedc5f89540058d74370d628c7af47}
+Generate Delay of two seconds. \hypertarget{AETC__GSMS_8c_a840291bc02cba5474a4cb46a9b9566fe}{
+\index{AETC\_\-GSMS.c@{AETC\_\-GSMS.c}!main@{main}}
+\index{main@{main}!AETC_GSMS.c@{AETC\_\-GSMS.c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (void)}}
+\label{AETC__GSMS_8c_a840291bc02cba5474a4cb46a9b9566fe}
+
+
+$<$ File Descriptor to access serial port 
+
+\hypertarget{AETC__GSMS_8c_a8e7b00df41b6caed376b8ffa5d735092}{
+\index{AETC\_\-GSMS.c@{AETC\_\-GSMS.c}!port\_\-close@{port\_\-close}}
+\index{port\_\-close@{port\_\-close}!AETC_GSMS.c@{AETC\_\-GSMS.c}}
+\subsubsection[{port\_\-close}]{\setlength{\rightskip}{0pt plus 5cm}void port\_\-close (int {\em fd})}}
+\label{AETC__GSMS_8c_a8e7b00df41b6caed376b8ffa5d735092}
+Close port for reuse 
+\begin{DoxyParams}{Parameters}
+\item[{\em fd}]File Descriptor to access serial port \end{DoxyParams}
+\hypertarget{AETC__GSMS_8c_a3617f233b4769b22741431ca316c17f5}{
+\index{AETC\_\-GSMS.c@{AETC\_\-GSMS.c}!port\_\-config@{port\_\-config}}
+\index{port\_\-config@{port\_\-config}!AETC_GSMS.c@{AETC\_\-GSMS.c}}
+\subsubsection[{port\_\-config}]{\setlength{\rightskip}{0pt plus 5cm}void port\_\-config (int {\em fd})}}
+\label{AETC__GSMS_8c_a3617f233b4769b22741431ca316c17f5}
+Configure port 
+\begin{DoxyParams}{Parameters}
+\item[{\em fd}]File Descriptor to access serial port \end{DoxyParams}
+\hypertarget{AETC__GSMS_8c_aed25fe19369b6d61d6a42f2b211ea760}{
+\index{AETC\_\-GSMS.c@{AETC\_\-GSMS.c}!port\_\-open@{port\_\-open}}
+\index{port\_\-open@{port\_\-open}!AETC_GSMS.c@{AETC\_\-GSMS.c}}
+\subsubsection[{port\_\-open}]{\setlength{\rightskip}{0pt plus 5cm}int port\_\-open (void)}}
+\label{AETC__GSMS_8c_aed25fe19369b6d61d6a42f2b211ea760}
+Open port for serial communication. display error messsage if unable to open. \hypertarget{AETC__GSMS_8c_a3fe91e8a27406711d3535d415c54c064}{
+\index{AETC\_\-GSMS.c@{AETC\_\-GSMS.c}!write\_\-data@{write\_\-data}}
+\index{write\_\-data@{write\_\-data}!AETC_GSMS.c@{AETC\_\-GSMS.c}}
+\subsubsection[{write\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void write\_\-data (int {\em fd}, \/  char $\ast$ {\em c})}}
+\label{AETC__GSMS_8c_a3fe91e8a27406711d3535d415c54c064}
+Send Message to register owner 
+\begin{DoxyParams}{Parameters}
+\item[{\em fd}]File Descriptor to access serial port \item[{\em $\ast$c}]character pointer \end{DoxyParams}

@@ -1,0 +1,180 @@
+\hypertarget{AETC__lcd_8c}{
+\section{src/AETC\_\-lcd.c File Reference}
+\label{AETC__lcd_8c}\index{src/AETC\_\-lcd.c@{src/AETC\_\-lcd.c}}
+}
+{\ttfamily \#include $<$avr/io.h$>$}\par
+{\ttfamily \#include $<$avr/delay.h$>$}\par
+{\ttfamily \#include $<$util/delay.h$>$}\par
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{AETC__lcd_8c_a9d4ad5467cb8a39312513dfaaf4d950a}{
+\#define \hyperlink{AETC__lcd_8c_a9d4ad5467cb8a39312513dfaaf4d950a}{FCPU}~11059200ul}
+\label{AETC__lcd_8c_a9d4ad5467cb8a39312513dfaaf4d950a}
+
+\begin{DoxyCompactList}\small\item\em set the cpu frequency \item\end{DoxyCompactList}\item 
+\hypertarget{AETC__lcd_8c_af8903d8eea3868940c60af887473b152}{
+\#define \hyperlink{AETC__lcd_8c_af8903d8eea3868940c60af887473b152}{RS}~0}
+\label{AETC__lcd_8c_af8903d8eea3868940c60af887473b152}
+
+\begin{DoxyCompactList}\small\item\em set command input \item\end{DoxyCompactList}\item 
+\hypertarget{AETC__lcd_8c_afc4ded33ac0ca43defcce639e965748a}{
+\#define \hyperlink{AETC__lcd_8c_afc4ded33ac0ca43defcce639e965748a}{RW}~1}
+\label{AETC__lcd_8c_afc4ded33ac0ca43defcce639e965748a}
+
+\begin{DoxyCompactList}\small\item\em writing to LCD \item\end{DoxyCompactList}\item 
+\hypertarget{AETC__lcd_8c_a22e6626f2c98ed902f8ded47f6438c05}{
+\#define \hyperlink{AETC__lcd_8c_a22e6626f2c98ed902f8ded47f6438c05}{EN}~2}
+\label{AETC__lcd_8c_a22e6626f2c98ed902f8ded47f6438c05}
+
+\begin{DoxyCompactList}\small\item\em set Enable pin \item\end{DoxyCompactList}\item 
+\hypertarget{AETC__lcd_8c_ab44cc79afa2e158e5173a42d0bdd01b0}{
+\#define {\bfseries lcd\_\-port}~PORTC}
+\label{AETC__lcd_8c_ab44cc79afa2e158e5173a42d0bdd01b0}
+
+\item 
+\hypertarget{AETC__lcd_8c_a0e1a587a6bb537fb5e9c836231291df4}{
+\#define {\bfseries sbit}(reg, bit)~reg $|$= (1$<$$<$bit)}
+\label{AETC__lcd_8c_a0e1a587a6bb537fb5e9c836231291df4}
+
+\item 
+\hypertarget{AETC__lcd_8c_aad24a3ffd9b61c778f99521f717864a9}{
+\#define {\bfseries cbit}(reg, bit)~reg \&= $\sim$(1$<$$<$bit)}
+\label{AETC__lcd_8c_aad24a3ffd9b61c778f99521f717864a9}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{AETC__lcd_8c_aa239ab5a6704dda21c5071b32a3cf3a8}{
+void {\bfseries init\_\-ports} ()}
+\label{AETC__lcd_8c_aa239ab5a6704dda21c5071b32a3cf3a8}
+
+\item 
+\hypertarget{AETC__lcd_8c_a8cb7183ba3f64a4c678db00589de269f}{
+void {\bfseries lcd\_\-reset\_\-4bit} ()}
+\label{AETC__lcd_8c_a8cb7183ba3f64a4c678db00589de269f}
+
+\item 
+void \hyperlink{AETC__lcd_8c_ac23e73124dc9fabae95671fe71d074a6}{lcd\_\-init} ()
+\item 
+void \hyperlink{AETC__lcd_8c_afff7370014e73715ce0d31b4d994c916}{lcd\_\-wr\_\-command} (unsigned char)
+\item 
+void \hyperlink{AETC__lcd_8c_a02b47802a409ab525f2fda28140150b0}{lcd\_\-wr\_\-char} (char)
+\item 
+\hypertarget{AETC__lcd_8c_a60675105b93bba6762aaab88d732365a}{
+void {\bfseries lcd\_\-home} ()}
+\label{AETC__lcd_8c_a60675105b93bba6762aaab88d732365a}
+
+\item 
+void \hyperlink{AETC__lcd_8c_ad8006d544921c9533806fdc898c75112}{lcd\_\-cursor} (char, char)
+\item 
+void \hyperlink{AETC__lcd_8c_a48b63200c8d5c8c5231031674cbb63d6}{lcd\_\-print} (char, char, unsigned int, int)
+\item 
+void \hyperlink{AETC__lcd_8c_a1eeb0747ef56e3dab0a64e7688b3ff65}{lcd\_\-string} (char $\ast$)
+\item 
+void \hyperlink{AETC__lcd_8c_a3f8a3732239f1ff251be98da40c120e1}{lcd\_\-set\_\-4bit} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{AETC__lcd_8c_a13006074294a071b6c7a268a498f77f7}{
+unsigned int {\bfseries temp}}
+\label{AETC__lcd_8c_a13006074294a071b6c7a268a498f77f7}
+
+\item 
+\hypertarget{AETC__lcd_8c_a09cef70e6322053ea80ae603446346c5}{
+unsigned int {\bfseries unit}}
+\label{AETC__lcd_8c_a09cef70e6322053ea80ae603446346c5}
+
+\item 
+\hypertarget{AETC__lcd_8c_ab84b805352ca4b7ecfc9601ddab528bc}{
+unsigned int {\bfseries tens}}
+\label{AETC__lcd_8c_ab84b805352ca4b7ecfc9601ddab528bc}
+
+\item 
+\hypertarget{AETC__lcd_8c_a913b0b4b2d4fd1ccc45534741d386cc8}{
+unsigned int {\bfseries hundred}}
+\label{AETC__lcd_8c_a913b0b4b2d4fd1ccc45534741d386cc8}
+
+\item 
+\hypertarget{AETC__lcd_8c_aa790b5f78a8f90d800d64c46c3e40205}{
+unsigned int {\bfseries thousand}}
+\label{AETC__lcd_8c_aa790b5f78a8f90d800d64c46c3e40205}
+
+\item 
+\hypertarget{AETC__lcd_8c_ae98244497f01cb51c50a6a1d18642b71}{
+unsigned int {\bfseries million}}
+\label{AETC__lcd_8c_ae98244497f01cb51c50a6a1d18642b71}
+
+\item 
+\hypertarget{AETC__lcd_8c_acb559820d9ca11295b4500f179ef6392}{
+int {\bfseries i}}
+\label{AETC__lcd_8c_acb559820d9ca11295b4500f179ef6392}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Program for printing data on LCD. \begin{DoxyAuthor}{Author}
+Puskar Kothavade, Ashish Pardhi, Mugdha Nazare, IIT Bombay 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+10/Oct/2010 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.0
+\end{DoxyVersion}
+\hypertarget{AETC__Robot_8c_LICENSE}{}\subsection{LICENSE}\label{AETC__Robot_8c_LICENSE}
+Copyright (c) 2010. ERTS Lab IIT Bombay All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+Neither the name of the copyright holders nor the names of contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+Source code can be used for academic purpose. For commercial use permission form the author needs to be taken. 
+
+\subsection{Function Documentation}
+\hypertarget{AETC__lcd_8c_ad8006d544921c9533806fdc898c75112}{
+\index{AETC\_\-lcd.c@{AETC\_\-lcd.c}!lcd\_\-cursor@{lcd\_\-cursor}}
+\index{lcd\_\-cursor@{lcd\_\-cursor}!AETC_lcd.c@{AETC\_\-lcd.c}}
+\subsubsection[{lcd\_\-cursor}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-cursor (char {\em row}, \/  char {\em column})}}
+\label{AETC__lcd_8c_ad8006d544921c9533806fdc898c75112}
+Position the LCD cursor at \char`\"{}row\char`\"{}, \char`\"{}column\char`\"{}. 
+\begin{DoxyParams}{Parameters}
+\item[{\em row}]no. of rows \item[{\em column}]no. of columns \end{DoxyParams}
+\hypertarget{AETC__lcd_8c_ac23e73124dc9fabae95671fe71d074a6}{
+\index{AETC\_\-lcd.c@{AETC\_\-lcd.c}!lcd\_\-init@{lcd\_\-init}}
+\index{lcd\_\-init@{lcd\_\-init}!AETC_lcd.c@{AETC\_\-lcd.c}}
+\subsubsection[{lcd\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-init ()}}
+\label{AETC__lcd_8c_ac23e73124dc9fabae95671fe71d074a6}
+Function to Initialize LCD \hypertarget{AETC__lcd_8c_a48b63200c8d5c8c5231031674cbb63d6}{
+\index{AETC\_\-lcd.c@{AETC\_\-lcd.c}!lcd\_\-print@{lcd\_\-print}}
+\index{lcd\_\-print@{lcd\_\-print}!AETC_lcd.c@{AETC\_\-lcd.c}}
+\subsubsection[{lcd\_\-print}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-print (char {\em row}, \/  char {\em coloumn}, \/  unsigned int {\em value}, \/  int {\em digits})}}
+\label{AETC__lcd_8c_a48b63200c8d5c8c5231031674cbb63d6}
+Function To Print Any input value upto the desired digit on LCD \hypertarget{AETC__lcd_8c_a3f8a3732239f1ff251be98da40c120e1}{
+\index{AETC\_\-lcd.c@{AETC\_\-lcd.c}!lcd\_\-set\_\-4bit@{lcd\_\-set\_\-4bit}}
+\index{lcd\_\-set\_\-4bit@{lcd\_\-set\_\-4bit}!AETC_lcd.c@{AETC\_\-lcd.c}}
+\subsubsection[{lcd\_\-set\_\-4bit}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-set\_\-4bit ()}}
+\label{AETC__lcd_8c_a3f8a3732239f1ff251be98da40c120e1}
+Function to Reset LCD \hypertarget{AETC__lcd_8c_a1eeb0747ef56e3dab0a64e7688b3ff65}{
+\index{AETC\_\-lcd.c@{AETC\_\-lcd.c}!lcd\_\-string@{lcd\_\-string}}
+\index{lcd\_\-string@{lcd\_\-string}!AETC_lcd.c@{AETC\_\-lcd.c}}
+\subsubsection[{lcd\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-string (char $\ast$ {\em str})}}
+\label{AETC__lcd_8c_a1eeb0747ef56e3dab0a64e7688b3ff65}
+Function to Print String on LCD \hypertarget{AETC__lcd_8c_a02b47802a409ab525f2fda28140150b0}{
+\index{AETC\_\-lcd.c@{AETC\_\-lcd.c}!lcd\_\-wr\_\-char@{lcd\_\-wr\_\-char}}
+\index{lcd\_\-wr\_\-char@{lcd\_\-wr\_\-char}!AETC_lcd.c@{AETC\_\-lcd.c}}
+\subsubsection[{lcd\_\-wr\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-wr\_\-char (char {\em letter})}}
+\label{AETC__lcd_8c_a02b47802a409ab525f2fda28140150b0}
+Function to Write Data on LCD \hypertarget{AETC__lcd_8c_afff7370014e73715ce0d31b4d994c916}{
+\index{AETC\_\-lcd.c@{AETC\_\-lcd.c}!lcd\_\-wr\_\-command@{lcd\_\-wr\_\-command}}
+\index{lcd\_\-wr\_\-command@{lcd\_\-wr\_\-command}!AETC_lcd.c@{AETC\_\-lcd.c}}
+\subsubsection[{lcd\_\-wr\_\-command}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-wr\_\-command (unsigned char {\em cmd})}}
+\label{AETC__lcd_8c_afff7370014e73715ce0d31b4d994c916}
+Function to Write Command on LCD 
